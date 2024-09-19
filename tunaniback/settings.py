@@ -115,7 +115,7 @@ WSGI_APPLICATION = 'tunaniback.wsgi.application'
 
 import dj_database_url
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://uf1qedb7k28r1u:p452a98e8723c08d9bc10d31986bccb6a463bfc83afb64034232667b65388d0a3@c9pbiquf6p6pfn.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dd97l8aakefihi', conn_max_age=600, ssl_require=True)
+    'default': dj_database_url.config(default='postgres://uenb531gr02vfu:p2eb2a1f3ff4f1669dee0de95dd419408f5d6f48d1a89fc7d722c915c7ac73b95@ccba8a0vn4fb2p.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dcki992t0pcmqg', conn_max_age=600, ssl_require=True)
 }
 
 

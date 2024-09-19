@@ -15,15 +15,22 @@ class UsuarioManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
+   
+ 
     def create_superuser(self, email, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
-
+        
+        # Verifica si 'is_staff' e 'is_superuser' son verdaderos
         if not extra_fields.get('is_staff'):
             raise ValueError('Superuser debe tener is_staff=True.')
         if not extra_fields.get('is_superuser'):
             raise ValueError('Superuser debe tener is_superuser=True.')
-
+        
+        # Proporciona un valor predeterminado para 'datos_id' si no se proporciona
+        if 'datos_id' not in extra_fields or extra_fields['datos_id'] is None:
+            extra_fields['datos_id'] = 1  # Reemplaza 'default_value' con un valor apropiado
+    
         return self.create_user(email, password, **extra_fields)
 
 class Rol(models.Model):
